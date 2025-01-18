@@ -1,0 +1,172 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    margin: 0;
+    background-color: rgb(232, 232, 232);
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
+    color: #2B283A;
+}
+
+main {
+    margin: 1em auto;
+    align-self: center;
+    box-shadow: 0px 4px 11px -3px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+h1 {
+    font-size: 1.5rem;
+    padding: 0 1em;
+    margin-bottom: 0;
+}
+
+.inputs-container {
+    display: flex;
+    gap: 0.75em;
+    justify-content: space-between;
+    padding: 1.25em 1.5em;
+    box-shadow: 0px 8px 4px -4px rgba(0, 0, 0, 0.2);
+}
+
+input[type="color"] {
+    display: block;
+    height: inherit;
+    border: 0px;
+    background-color: #D1D5DB;
+    transition: border 0.3s ease-in-out;
+}
+
+select, button {
+    padding: 0.75em;
+    border: 1px solid #D1D5DB;
+    background-color: transparent;
+    font-family: "Inter", serif;
+    font-weight: 300;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+input[type="color"], select, button {
+    border-radius: 0.25em;
+}
+
+button:hover, button:active {
+    background-color: #d3d3d3;
+}
+
+input[type="color"]:hover,
+input[type="color"]:active,
+select:hover,
+select:active,
+button:hover,
+button:active {
+    border: 2px solid black;
+}
+
+button:focus-visible {
+    border: 2px solid #0073e6;
+    background-color: #e6f0ff;
+}
+
+input:focus-visible, select:focus-visible {
+    border: 2px solid #0073e6;
+}
+
+/* Custom Arrow for Select Input */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%232B283A'%3E%3Cpath d='M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 1.25em;
+    padding-right: 2.5em;
+}
+
+/* Fix for Firefox */
+select::-ms-expand {
+    display: none;
+}
+
+/* Color Scheme Styling */
+.color-scheme-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.color-block {
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease-in-out, border 0.1s ease-in-out;
+}
+
+.color-block:hover {
+    box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.2) inset;
+    border: 2px solid black;
+    z-index: 1;
+    transform: scale(1.02);
+}
+
+.color-block:focus-visible {
+    outline: 2px solid #0073e6;
+    box-shadow: 0px 0px 10px rgba(0, 115, 230, 0.5);
+}
+
+.hex-color-div {
+    height: 18.75em;
+}
+
+.hex-color-value {
+    height: 50px;
+    font-size: 0.75rem;
+    align-self: center;
+    padding: 1.5em 1em 1em;
+}
+
+
+/* Media Queries */
+@media (max-width: 500px) {
+    .inputs-container {
+        flex-direction: column;
+    }
+
+    input[type="color"] {
+        width: 100%;
+        height: 48px;
+    }
+
+    select option {
+        text-align: center;
+    }
+
+    .color-scheme-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hex-color-div {
+        height: 6.25em;
+        width: 65%;
+    }
+
+    .color-block {
+        flex-direction: row;
+        gap: 1em;
+    }
+
+    .hex-color-value {
+        width: 35%;
+        text-align: left;
+        padding-left: 0;
+    }
+}
+

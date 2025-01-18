@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <title>Color Scheme Generator</title>
+</head>
+<body>
+    <main class="color-gen-container">
+        <h1>Color Scheme Generator</h1>
+        <header>
+            <div class="inputs-container">
+                <input type="color" id="color-picker" aria-label="Choose a color">
+                <select name="select-menu" id="color-mode-menu" aria-label="Select a color mode">
+                    <option value="monochrome">Monochrome</option>
+                    <option value="monochrome-dark">Monochrome-dark</option>
+                    <option value="monochrome-light">Monochrome-light</option>
+                    <option value="analogic">Analogic</option>
+                    <option value="complement">Complement</option>
+                    <option value="analogic-complement">Analogic-complement</option>
+                    <option value="triad">Triad</option>
+                </select>
+                <button type="button" id="get-scheme-btn" aria-label="Generate color scheme">Get color scheme</button>
+            </div>
+            <div class="color-scheme-container" id="color-scheme-container" role="region" aria-live="polite"></div>
+        </header>
+    </main>
+    <script src="./index.js"></script>
+</body>
+</html>
